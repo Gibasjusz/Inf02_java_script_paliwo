@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <section id="banner">
+        <h1>Całodobowa stacja paliw</h1>
+    </section>
+
+    <section id="menu_block">
+        <a href="stacja.html"><img src="home.png" alt=""></a>
+        <a href="obliczenia.html"><img src="znak.png" alt=""></a>
+        <a href="kwerendy.txt">Pobierz dokumenty</a>
+    </section>
+
+    <section id="left_block">
+        <h2>Orientacyjny koszt paliwa</h2><br>
+        Rodzaj paliwa (1-benzyna, 2-olej napędowy): <br>
+        <input type="number" id="rodzaj_paliwa"><br>
+        Ile litrów: <br>
+        <input type="number" id="amount"><br>
+        <input type="submit" value="OBLICZ" onclick="paliwo()">
+        <br>
+        <span id="wynik"></span>
+    </section>
+
+    <section id="right_block">
+        <img src="samochod.png" alt="samochód" class="sam">
+    </section>
+
+    <section id="footer">
+        <p>Stronę opracował: 10101010101001010</p>
+    </section>
+
+    <script>
+        function paliwo() {
+            var rodzaj = document.getElementById('rodzaj_paliwa').value;
+            console.log(rodzaj);
+            var ilosc = document.getElementById('amount').value;
+            console.log(ilosc);
+
+            if (rodzaj==1) {
+                var koszt = ilosc*4;
+                document.getElementById('wynik').innerHTML = koszt; 
+                console.log('ok');
+            }
+            else if (rodzaj==2) {
+                var koszt2 = ilosc*3.5;
+                document.getElementById('wynik').innerHTML = koszt2;
+                console.log('ok2'); 
+            }
+            else {
+                document.getElementById('wynik').innerHTML = 'Nie ma takiego paliwa'; 
+                console.log('ok3'); 
+            }
+        }
+    </script>
+</body>
+</html>
